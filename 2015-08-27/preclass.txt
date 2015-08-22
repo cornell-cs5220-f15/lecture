@@ -1,0 +1,27 @@
+## Reading questions
+
+1.  A given program spends 10% of its time in an initial startup
+    phase, and then 90% of its time in work that can be easily
+    parallelized.  Assuming a machine with homogeneous cores, plot the
+    idealized speedup and parallel efficiency of the overall code
+    according to Amdahl's law for up to 128 cores.  If you know how,
+    you should use a script to produce this plot, with both the serial
+    fraction and the maximum number of cores as parameters.
+
+2.  Suppose a particular program can be partitioned into perfectly
+    independent tasks, each of which takes time tau.  Tasks are
+    set up, scheduled, and communicated to p workers at a (serial)
+    central server; this takes an overhead time alpha per task.
+    What is the theoretically achievable throughput (tasks/time)?
+
+3.  Under what circumstances is it best to not tune?
+
+4.  The class cluster consists of eight nodes and fifteen Xeon Phi
+    accelerator boards.  Based on an online search for information on
+    these systems, what do you think is the theoretical peak flop rate
+    (double-precision floating point operations per second)?  Show how
+    you computed this, and give URLs for where you got the parameters
+    in your calculation.  (We will return to this question again after
+    we cover some computer architecture.)
+    
+5.  What is the approximate theoretical peak flop rate for your own machine?

@@ -1,0 +1,23 @@
+## How many are you?
+
+In the first lecture, we ran a parallel protocol for counting attendance:
+
+ - Rightmost person per row counts all in row
+ - When done counting, raises hand
+ - State number in row when called on
+
+after which the instructor gets to gather and sum the row counts.
+
+In practice, this took X time.  This includes
+
+ - Time to start the process
+ - Time to compute row counts
+ - Time for the instructor to gather counts
+ - Time for instructor to do the arithmetic
+
+Consider the following questions:
+
+1. What is a simple model that would predict this time?
+2. What about a simple model to predict time for one person to count?
+3. How big should the class be before the parallel method takes less time?
+

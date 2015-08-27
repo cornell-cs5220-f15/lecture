@@ -1,0 +1,34 @@
+- On board when people come in: try not to sit alone!
+
+- Start etherpad for class discussions / tracking what I’m typing
+
+- Logistical notes
+  - Student churn -- welcome to newcomers!
+  - Compiler up
+  - Intel Parallel Studio XE free for students
+  - Submit HW0!
+
+- I will start with the discussion of HW submissions so far + class
+  background stats (and gently remind students to submit HW0)
+
+- We’ll walk through an example of the logistics of setting up a PR
+  for evaluation (with the lecture repository as an example)
+
+  - Pre-step: get students who know how this works to do a show of hands
+  - Aside: several students have been confused by the idea of PR without merge
+
+- Class discussion: questions on reading?
+
+ - Should have done Amdahl; in-class related question re: Gustafson
+   (try to get students to submit via PR, small groups)
+ - Open discussion: why not tune?  Back of the envelope re effort /
+   time tradeoffs.  Note importance of high-impact practices (good
+   compilers, test cases, etc)
+
+- Cluster demo/discussion
+
+ - Q: theoretical peak?  Open discussion
+ - Basic framework: vector widths, issues per cycle, frequency — estimate
+   - Ref: similar calc for Tianhe-2 nodes
+ - Login to cluster and use hwloc to look at specs
+ - Looking ahead: architecture discussion on Tuesday, reading/slides posted

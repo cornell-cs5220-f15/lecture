@@ -1,0 +1,71 @@
+## Reading questions
+
+The first two questions are questions from last time, but worth
+revisiting.  These are up rather late, but do what you can, and come
+with questions for class!
+
+1.  The class cluster consists of eight nodes and fifteen Xeon Phi
+    accelerator boards.  Based on an online search for information on
+    these systems, what do you think is the theoretical peak flop rate
+    (double-precision floating point operations per second)?  Show how
+    you computed this, and give URLs for where you got the parameters
+    in your calculation.  (We will return to this question again after
+    we cover some computer architecture.)
+    
+2.  What is the approximate theoretical peak flop rate for your own machine?
+
+3.  Suppose there are t tasks that can be executed in a pipeline
+    with p stages.  What is the speedup over serial execution of the
+    same tasks?
+
+4.  Consider the following list of tasks (assume they can't be pipelined):
+
+      compile GCC (1 hr)
+      compile OpenMPI (0.5 hr) - depends on GCC
+      compile OpenBLAS (0.25 hr) - depends on GCC
+      compile LAPACK (0.5 hr) - depends on GCC and OpenBLAS
+      compile application (0.5 hr) - depends on GCC, OpenMPI,
+        OpenBLAS, LAPACK
+
+    What is the minimum serial time between starting to compile and having
+    a compiled application?  What is the minimum parallel time given
+    an arbitrary number of processors?
+
+5.  Clone the membench repository from GitHub:
+
+       git clone git@github.com:cornell-cs5220-f15/membench.git
+
+    On your own machine, build `membench` and generate the associated
+    plots; for many of you, this should be as simple as typing `make`
+    at the terminal (though I assume you have Python with pandas and
+    Matplotlib installed; see also the note about Clang and OpenMP
+    in the leading comments of the Makefile).  Look at the output file
+    timings-heat.pdf; what can you tell about the cache architecture
+    on your machine from the plot?
+
+6.  From the cloned repository, check out the totient branch:
+
+       git checkout totient
+
+    You may need to move generated files out of the way to do this.
+    If you prefer, you can also look at the files on GitHub.  Either
+    way, repeat the exercise of problem 5.  What can you tell about
+    the cache architecture of the totient nodes?
+
+7.  Implement the following three methods of computing the centroid
+    of a million two-dimensional coordinates (double precision).
+    Time and determine which is faster:
+
+    a.  Store an array of (x,y) coordinates; loop i and simultaneously
+        sum the xi and yi
+
+    b.  Store an array of (x,y) coordinates; loop i and sum the xi,
+        then sum the yi in a separate loop
+
+    c.  Store the xi in one array, the yi in a second array.
+        Sum the xi, then sum the yi.
+
+    I recommend doing this on the class cluster using the Intel
+    compiler.  To do this, run "module load cs5220" and run (e.g.)
+
+        icc -o centroid centroid.c

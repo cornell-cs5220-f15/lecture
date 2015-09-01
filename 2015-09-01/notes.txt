@@ -1,0 +1,58 @@
+0.  Logistics
+
+ - Ice-breaker: Run through counting protocol again
+
+ - HW0
+   - Still some missing (24/114) -- turn it in!
+   - Show breakdown re architecture
+
+ - Git and PR
+   - If you're lost come to OH -- or ask a friend!
+   - There's a post by Colin on Git+GitHub -- also see reading page
+   - You will want to keep your fork of the lecture Q up-to-date:
+
+       https://help.github.com/articles/syncing-a-fork/
+
+ - Cluster
+   - All should be able to login, have home dirs
+   - module load cs5220 gets base configuration (incl git 2)
+   - Still working on a few things (ssh to Phi, gcc 4.9.2/4.9.3)
+   - Q: Audio working for everyone who wants it?
+
+ - membench timing
+   - Uses OpenMP primitives for timing -- missing from Apple Clang!
+   - Should work with recent GCC on whatever machine
+
+1.  Revisit weak scaling / Gustafson
+
+  - What is the "serial time" (hint: it's a projected time)?
+  - There are other types: time-constrained scaling, error-based scaling
+  - Ref: http://www.cs.berkeley.edu/~demmel/cs267-1995/disc2/disc2.html
+
+  [GUS1] Re-evaluating Amdahl's law. John L. Gustafson. CACM(31)5 May 1988. 
+  [SHG] Scaling Parallel Programs for Multiprocessors: Methodology and
+      Examples: J.P. Singh, J.L. Hennessy., and A. Gupta. IEEE Computer,
+      July 1993.
+
+2.  Theoretical peak flop rate breakdown - ref slides
+
+ - Haswell architecture (same as laptop)
+ - Phi architecture?
+
+3.  Q4 -- show dependency graph, longest dependency chain
+
+4.  Mini-lecture -- sketch what membench is doing on the board
+
+5.  Group exercise -- look at membench plots
+
+ - Commentary: Matplotlib, Seaborn, other vis
+ - Commentary: how to do timing
+ - Analysis of features on my laptop
+ - Analysis of features on totient cluster
+
+6.  Group exercise -- centroid.
+
+ - Commentary: How to time?  Set up framework and push.
+ - Theoretical peak (ignoring memory)?
+ - Theoretical peak with cold cache?
+ - Order of sums and artificial dependency

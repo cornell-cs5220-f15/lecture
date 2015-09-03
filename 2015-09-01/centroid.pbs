@@ -1,0 +1,8 @@
+#!/bin/sh
+
+#PBS -N centroid
+#PBS -j oe
+
+cd ~/lecture/2015-09-01
+./centroid
+

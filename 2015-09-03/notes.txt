@@ -1,0 +1,75 @@
+- Course logistics
+  - Intro: Eric Lee
+  - No pre-class questions this time
+  - Most turned in HW0 by now -- thanks!  Due at end of add period...
+    - I will probably "freeze" my hw0.yml shortly
+      (+ fill out with guesses based on facultycenter)
+  - Most have forked the repo, some haven't done a PR
+    - One PR, open over the semester is fine
+    - Please do work on this over time -- use git for record!
+  - Course home page: cluster notes, reading -- watch!
+  - Will get higher level -- pivoting toward apps after next week
+  - Keep an eye on web page for a couple sets of slides
+    - Matmul stuff
+    - Parallel architecture
+
+- Software logistics
+  - Hard to set up HW on Phi without access!  May use main nodes
+  - Lots of software in place; use module load cs5220
+    - Still doing a few builds -- should get more responsive after
+    - Can see everything via module avail
+    - Key modules: devtoolset, utils, anaconda, psxe
+    - OpenBLAS will also play a role in upcoming assignment
+  - Module system on totient (can see exactly what we're doing - totient-pkg)
+    - Compilers are now at 4.9.2 (with RH extensions -- Cilk+)
+    - Also have Intel compilers -- compatible with GCC
+  - Python recommendation: Anaconda
+  - Aside: tmux, agent forwarding and keys, git on cluster; tramp if emacs
+
+- Peak flop rate
+  - Why?  Observe multiple types of parallelism, hard to figure out!
+  - Multiple types simultaneously
+    - Per core: multiple functional units + pipelines
+    - Multiple cores/chip, chips/node, nodes/cluster
+  - References for computing peak Flop rate
+  - Spent a bit more time on this than expected
+  - How much to know about low-level details?  Not too much, we hope!
+
+- Other good questions
+  - How would you know about diff types of parallel instructions avail?
+  - How to abstract away details, still leave critical bits?
+
+- Parallelism
+  - Concept of the critical path
+  - Want to reduce critical paths / expose parallelism
+
+- Chit-chat: cache hierarchy
+  - Spatial locality, temporal locality, working set
+  - Analogy: desk / library / etc
+  - Alignment
+  - membench visualization (adding lines up to you!)
+
+- Aside: practical matters
+  - C to produce data files, Python to visualize, Makefile to coordinate
+  - Running membench
+    - Want data collection to run on nodes -- use qsub
+    - OK to do actual plots on front-end (doesn't really matter)
+    - Should probably tweak Makefile!
+  - OpenMP timing vs clocks
+    - Why?  Not lots of portable options, GCC now support (not Clang)
+    - C++11 now supports as well
+
+- Arithmetic vs memory
+  - Roofline model (paper posted -- read over weekend)
+  - Different codes limited by different things
+
+- Recap - arithmetic intensity and memory
+  - Peak flop rate with AI = 1
+  - Bandwidth computation and the million-point centroid example
+  - BLAS and intro to matrix multiply
+
+Exercises:
+
+- p-stage pipeline with t tasks (left over)
+- centroid computation speed
+- (if start matmul): game with one level cache -- theoretical peak for matmul?

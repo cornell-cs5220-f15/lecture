@@ -17,7 +17,8 @@
    - All should be able to login, have home dirs
    - module load cs5220 gets base configuration (incl git 2)
    - Still working on a few things (ssh to Phi, gcc 4.9.2/4.9.3)
-   - Q: Audio working for everyone who wants it?
+
+ - Q: Audio working for everyone who wants it?
 
  - membench timing
    - Uses OpenMP primitives for timing -- missing from Apple Clang!

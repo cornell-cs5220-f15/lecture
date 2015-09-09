@@ -1,0 +1,45 @@
+- Logistics
+  - Cluster appears to work!
+    - Most SW that I wanted is now built working
+    - Login to Phi cards seems to be working (needs more testing)
+  - Matmul assignment up (thanks to Eric)
+    - Central group assignment for mixed teams (based on HW0)
+    - Randomized with background constraints
+    - Algorithmic recommendations are welcome! (aside: dining problem)
+  - Do read the Roofline paper
+
+- Demo: Matmul codes
+
+  - Quick aside: how to think about matrix multiply
+    - Inner product, outer product, blocked
+
+- Class activities (thanks to Colin) - est 42 minutes
+
+  - Go over questions, show the "right" answers, run some benchmarks to
+    show an experimental performance profile and compare it to the
+    predicted profile. (5 minutes)
+
+  - Students get together, discuss how this picture changes for
+    non-square matrices. (10 minutes)
+
+  - Bring class together, discuss answers, show benchmarks for
+    non-square matrices. (5 minutes)
+
+  - Ask how to make this faster for larger problems. Give two key
+    hints: 1) Addition is associative, so order of the matmul
+    computation doesn't change answer (to within floating point
+    error), and 2) As we've seen, naive matmul can be efficient for
+    certain (smallish) problem sizes. (2 minutes)
+
+  - Students get together to try to figure out what to do with
+    that. Ask them to try computing arithmetic intensity for the more
+    efficient solution they find. We walk around and help guide them
+    to the idea of block matrix multiplication. (15 minutes)
+
+  - If we have time, get together to discuss performance, show some
+    benchmarks. (5 minutes)
+
+- Switching gears: parallel architecture
+  - Key bits: processors, memory, and interconnect
+  - Interesting question is how they hook together
+  - Differentiate: programming model vs architecture

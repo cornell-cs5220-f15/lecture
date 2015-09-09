@@ -11,7 +11,7 @@ for (i = 0; i < N; i++){
       C[i,j] = tmp
 }
 
-Suppose data is in double-precsion floating point. We are interested in
+Suppose data is in double-precision floating point. We are interested in
 estimating the memory-based arithmetic intensity (AI) of this code. The
 memory-based AI is defined that (# flops) / (# bytes transferred between memory
 and cache), and depends on the cache size. Suppose the cache uses a

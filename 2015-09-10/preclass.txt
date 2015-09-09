@@ -1,0 +1,19 @@
+1. Look up the specs for the totient nodes. Having read the Roofline paper,
+   draw a roofline diagram for one totient node (assuming only the
+   host cores are used, for the moment).  How do things change with
+   the addition of the two Phi boards?
+
+2. What is the difference between two cores and one core with
+   hyperthreading?
+
+3. Do a Google search to find a picture of how memories are arranged
+   on the Phi architecture.  Describe the setup briefly in your own
+   words.  Is the memory access uniform or non-uniform?
+
+4. Consider the parallel dot product implementations suggested in the
+   slides.  As a function of the number of processors, the size of the
+   vectors, and typical time to send a message, can you predict the
+   speedup associated with parallelizing a dot product computation?
+   [Note that dot products have low arithmetic intensity -- the
+    roofline model may be useful for reasoning about the peak
+    performance for computing pieces of the dot product]

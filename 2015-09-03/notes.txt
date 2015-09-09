@@ -23,6 +23,7 @@
   - Module system on totient (can see exactly what we're doing - totient-pkg)
     - Compilers are now at 4.9.2 (with RH extensions -- Cilk+)
     - Also have Intel compilers -- compatible with GCC
+  - qsub and qsub -I (expand on this after)
   - Python recommendation: Anaconda
   - Aside: tmux, agent forwarding and keys, git on cluster; tramp if emacs
 

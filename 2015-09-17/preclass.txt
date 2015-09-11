@@ -1,0 +1,63 @@
+If you are lost with the numerical aspects of the pre-class questions,
+please ask about them on Piazza or in office hours!  The intent is
+that we will focus on the computational patterns of the methods rather
+than on the numerical analysis, but I am working under the assumption
+that you can figure out the numerical jargon.
+
+0.  How much time did you spend on this pre-class exercise, and when?
+
+1.  What are one or two points that you found least clear in the
+    9/17 slide decks (including the narration)?
+
+2.  Fill in the most straightforward implementation you can think of
+    for multiplying a compressed sparse row matrix by a vector.
+    Note: It is fine to look up the answer elsewhere!  If you do,
+    please just say where you looked.
+
+      typedef struct csr_t {
+          int  n;   /* Dimension of matrix (assume square) */
+          int* pr;  /* Array of matrix nonzeros (row major order) */
+          int* col; /* Column indices of nonzeros *
+          int* ptr; /* Offsets of the start of each row in pr
+                       (ptr[n] = number of nonzeros) */
+      } csr_t;
+    
+      void sparse_multiply(csr_t* A, double* x, double* result)
+      {
+          /* Fill in here */
+      } 
+
+3.  From the slides, complete the following short code:
+
+      double laplacian_u(double (*u)(double x, double y),
+                         double h, double x, double y)
+      {
+          /* Estimate the Laplacian applied to u at (x,y) */
+      }
+
+    If you are unfamiliar with the syntax, the first argument to
+    laplacian_u is a C function pointer -- within the function,
+    it can be called in the same way as an ordinary function (i.e.
+    u(x,y)).  See the laplace2d.c code in this directory as an example.
+
+4.  In one space dimension, the following numerical scheme
+    approximately solves the wave equation
+
+        u_tt = c^2 u_xx
+
+    with zero boundary conditions at the end of the interval and
+    given initial values u(0,x) = f(x) and time derivatives
+    u'(0,x) = g(x).
+
+      u[0,k] = f(x[k])
+      u[1,k] = s^2/2 * (f[k+1]+f[k-1]) + (1-s^2)*f[k] + dt * g[k]
+
+      for j = 1 to nsteps
+          u[j+1,k] = s^2 * (u[j,k+1]+u[j,k-1]) + 2*(1-s^2)*u[j,k] - u[j-1,k]
+
+    where u[j,k] corresponds to the solution at time step j (time j*dt)
+    and grid node k, and s = c*dt/dx.  Following the pattern shown in
+    the slides for advancing a parallel explicit heat equation solver by
+    several steps without communicating, can you describe how to
+    similarly advance this scheme?  Are there any advantages to such
+    an organization if there is only one core available?

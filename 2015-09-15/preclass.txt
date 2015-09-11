@@ -1,0 +1,51 @@
+For the questions regarding the Game of Life, you may want to refer
+to the simple implementation included in the "life" subdirectory.
+If you run "make glider", you can see a small example of running
+the glider pattern for a few generations.
+
+0.  How much time did you spend on this pre-class exercise, and when?
+
+1.  What are one or two points that you found least clear in the
+    9/15 slide decks (including the narration)?
+
+2.  In the basic implementation provided, what size board for the Game
+    of Life would fit in L3 cache for one of the totient nodes?  Add a
+    timer to the code and run on the totient node.  How many cells per
+    second can we update for a board that fits in L3 cache?  For a
+    board that does not fit?
+
+3.  Assuming that we want to advance time by several generations,
+    suggest a blocking strategy that would improve the operational
+    intensity of the basic implementation.  Assume the board is
+    not dilute, so that we must still consider every cell.  You may
+    want to try your hand at implementing your strategy (though you
+    need not spend too much time on it).
+
+4.  Comment on what would be required to parallelize this code
+    according to the domain decomposition strategy outlined in the
+    slides.  Do you think you would see good speedups on one of
+    the totient nodes?  Why or why not?
+
+5.  Suppose we want to compute long-range interactions between two
+    sets of particles in parallel using the obvious n^2 algorithm in a
+    shared-memory setting.  A naive implementation might look like
+
+      struct particle_t {
+          double x, y;
+          double fx, fy;
+      };
+
+      // Update p1 with forces from interaction with p2
+      void apply_forces(particle* p1, particle* p2);
+
+      // Assume p is the index of the current processor,
+      // part_idx[p] <= i < part_idx[p+1] is the range of
+      // particles "owned" by processor p.
+      //
+      for (int i = part_idx[p]; i < part_idx[p+1]; ++i)
+          for (int j = 0; j < npart; ++j)
+              apply_forces(particle + i, particle + j);
+
+    Based on what you know about memories and parallel architecture,
+    do you see any features of this approach that are likely to lead
+    to poor performance?

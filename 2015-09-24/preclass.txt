@@ -1,0 +1,28 @@
+0.  How much time did you spend on this pre-class exercise, and when?
+
+1.  What are one or two points that you found least clear in the
+    9/24 slide decks (including the narration)?
+
+2.  The omp_mc.c file in the demo subdirectory runs a Monte Carlo
+    simulation to estimate the expected value of a uniform random
+    variable.  The "-p" option sets the number of processors used,
+    while "-b" sets the number of trials between synchronizations.
+
+    a) Write a model for the run time for this simulation code in
+       terms of the number of trials (N), number of processors (p),
+       time per trial (t_trial), and time to update the global
+       counters in the critical section (t_update).
+
+    b) Run the code with a few different parameter values in order
+       to estimate N, t_trial, and t_update for this code on
+       a totient compute node.
+
+    c) Based on your model, suggest a strategy for choosing the batch
+       size.  How might you generalize this strategy to automatically
+       choose batch sizes for different types of computational
+       experiments?
+
+3.  The "OpenMP pitfalls" paper describes some common pitfalls (both
+    performance and correctness) in OpenMP codes.  Go through the
+    checklist in the paper for omp_mc.c.  What performance mistakes
+    are there in the demonstration implementation?

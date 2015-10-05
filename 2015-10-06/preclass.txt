@@ -1,0 +1,27 @@
+0.  How much time did you spend on this pre-class exercise, and when?
+
+1.  What are one or two points that you found least clear in the
+    10/06 slide decks (including the narration)?
+
+2.  In the upcoming lecture (10/8), we will discuss how to model
+    latency and bandwidth of MPI sends and receives using the
+    ping-pong benchmark briefly described in the current demo.
+    We would like to understand the difference between different
+    MPI implementations (and make sure we know how to run MPI codes).
+
+    a) Make sure the cs5220 module is loaded and type "which mpicc";
+       if everything is correct, you should see the Intel MPI version
+       (under /usr/local/intel).  Using this version of MPI and the
+       default PBS files, run the pingpong examples (demo/pingpong).
+
+    b) Now do "module load openmpi/1.10.0-icc-15.0.3" after loading
+       the CS 5220 module.  Check by typing "which mpicc" that you
+       are now using a different version of mpicc.  Compile with
+       OpenMPI, and re-run the on-node tests using OpenMPI (note:
+       you will have to add a module load to the start of the PBS
+       scripts).  How do the timings differ from the Intel MPI timings?
+
+    c) When running at the peak rate (e.g. 16 double precision
+       flops/cycle), how many (double precision) floating point ops
+       could two totient cores do in the minimal time required for one
+       MPI message exchange?

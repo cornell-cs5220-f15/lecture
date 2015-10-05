@@ -1,0 +1,25 @@
+0.  How much time did you spend on this pre-class exercise, and when?
+
+1.  What are one or two points that you found least clear in the
+    10/08 slide decks (including the narration)?
+
+2.  Now that we are now basically a third of the way into the
+    semester, and are (mostly) settled into the steady pace of things,
+    I would appreciate your feedback on what is working well or poorly
+    about the class.  Comments on things I can reasonably change are
+    particularly useful -- venting about the cluster, for example, is
+    understandable but doesn't help me that much in adjusting!
+
+3.  The ring demo implements the protocol described in the particle
+    systems slide deck from 9/15:
+
+    http://cornell-cs5220-f15.github.io/slides/2015-09-15-particle.html#/11
+
+    a) In your own words, describe what ring.c is doing.
+
+    b) How might you modify the code to have the same computational
+       pattern, but using non-blocking communication rather than
+       MPI_Sendrecv?  Note that according to the MPI standard,
+       one isn't supposed to read from a buffer that is being
+       handled by a non-blocking send, so it is probably necessary
+       to use three temporary buffers rather than the current two.

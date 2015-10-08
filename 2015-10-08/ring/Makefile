@@ -7,5 +7,5 @@ ring.x: ring.c
 	$(CC) $(CFLAGS) $< -o $@
 
 clean:
-	rm -f ping.x ping-*.o*
+	rm -f ring.x ring-*.o*
 
